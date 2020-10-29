@@ -1,1 +1,1 @@
-export default () => {console.log("Search"); return"Search"};
+export default () => "Search";

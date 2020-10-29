@@ -1,1 +1,1 @@
-export default () => {console.log("TV"); return"TV"};
+export default () => "TV";

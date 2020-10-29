@@ -4,7 +4,7 @@ import reset from "styled-reset"
 const globalStyles = createGlobalStyle`
     ${reset}
     a{
-        text=decoration:none;
+        text-decoration:none;
         color:inherit;
     }
     *{
@@ -15,7 +15,9 @@ const globalStyles = createGlobalStyle`
         Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
         font-size:14px;
         color:white;
-        background-color:rgba(20,20,20,1);
+        background-color:gray;
+
+        padding-top:50px
     }
 `;
 
