@@ -1,10 +1,13 @@
+import React from "react"
+import {Link} from "react-router-dom"
+
 function Header() {
     return (
         <header>
         <ul>
-            <li><a href="/">Movies</a></li>
-            <li><a href="/tv">TV</a></li>
-            <li><a href="/search">Search</a></li>
+            <li><Link href="/">Movies</Link></li>
+            <li><Link href="/tv">TV</Link></li>
+            <li><Link href="/search">Search</Link></li>
         </ul>
         </header>
     ) 
