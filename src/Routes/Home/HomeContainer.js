@@ -20,7 +20,7 @@ class HomeContainer extends React.component {
                 error={error}
                 loading={loading}
             />
-        )
+        );
     }
 }
 
