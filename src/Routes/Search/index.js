@@ -1,3 +1,3 @@
-import SearchContainer from "./TVContainer"
+import SearchContainer from "./SearchContainer"
 
 export default SearchContainer;

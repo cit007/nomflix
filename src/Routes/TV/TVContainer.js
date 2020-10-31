@@ -1,7 +1,7 @@
-import React from "react.js"
+import React from "react";
 import TVPresenter from "./TVPresenter";
 
-class TVContainer extends React.component {
+class TVContainer extends React.Component {
     state = {
         topRated: null,
         popular: null,
