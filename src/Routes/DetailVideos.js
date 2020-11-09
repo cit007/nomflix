@@ -20,7 +20,6 @@ const Item = styled.li`
   font-weight:100;
   margin-bottom: 10px;
 
-
   display:flex;
   flex-flow:column;
 `;
@@ -53,13 +52,24 @@ export default function DetailVideos(props) {
 
     const fetchContents = async () => {
         try {
-            const { data: 
-              {videos: 
-                {results:detail}
-              } 
-            } = await moviesApi.movieDetail(id);
-            console.log("fetch data detail videos:",detail);
-            setDetail(detail);
+            if(isMovie) {
+              const { data: 
+                {videos: 
+                  {results:detail}
+                } 
+              } = await moviesApi.movieDetail(id);
+              console.log("fetch data movie detail:",detail);
+              setDetail(detail);
+            } else {
+              const { data: 
+                {videos: 
+                  {results:detail}
+                } 
+              } = await tvApi.tvDetail(id);
+              console.log("fetch data tv detail:",detail);
+              setDetail(detail);
+            }
+            
         } catch {
             setError("fetch data error : nowPlaying");
         } finally {

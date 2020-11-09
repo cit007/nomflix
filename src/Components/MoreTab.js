@@ -54,22 +54,32 @@ function MoreTab(props) {
     const { location : {pathname} } = props;
     const { match : {params: {id}}} = props;
     const isMovie = pathname.includes("/movie/");
-    console.log("more pathname is :", pathname, isMovie, id);
+    console.log("moretab (tv or movie)pathname is :", pathname, isMovie, id);
     return (
         <Main>
             <SubMenu>
                 <List>
                     <Item>
-                        <Link to={`/movie/${id}/Videos`}>Videos</Link>
+                        {   isMovie?
+                            <Link to={`/movie/${id}/Videos`}>Videos</Link>
+                            :
+                            <Link to={`/tv/${id}/Videos`}>Videos</Link>
+                        }
                     </Item>
                     <Item>
-                        <Link to={`/movie/${id}/Companies`}>Companies</Link>
+                        {   isMovie?
+                            <Link to={`/movie/${id}/Companies`}>Companies</Link>
+                            :
+                            <Link to={`/tv/${id}/Companies`}>Companies</Link>
+                        }
                     </Item>
                 </List>
             </SubMenu>
             
             <Route path="/movie/:id/Companies" component={DetailCompanies} />
             <Route path="/movie/:id/Videos" component={DetailVideos} />
+            <Route path="/tv/:id/Companies" component={DetailCompanies} />
+            <Route path="/tv/:id/Videos" component={DetailVideos} />
         </Main>
     );
 }
