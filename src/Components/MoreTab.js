@@ -2,6 +2,7 @@ import React from "react"
 import {Route, Link, withRouter} from "react-router-dom"
 import styled from "styled-components"
 import DetailCompanies from "../Routes/DetailCompanies"
+import DetailVideos from "../Routes/DetailVideos"
 
 const Main = styled.main`
 `;
@@ -71,7 +72,7 @@ function MoreTab(props) {
             </SubMenu>
             
             <Route path="/movie/:id/Companies" component={DetailCompanies} />
-            
+            <Route path="/movie/:id/Videos" component={DetailVideos} />
         </Main>
     );
 }

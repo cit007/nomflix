@@ -13,11 +13,6 @@ const Image = styled.div`
   background-position: center;
   transition: opacity 0.1s linear;
   margin-right: 20px;
-
-  &:hover {
-    filter: brightness(0.8);
-    transform: scale(3);
-  }
 `;
 
 const Container = styled.div`
@@ -45,21 +40,21 @@ const Item = styled.li`
 
 const NotFoundImage = "../assets/noPosterSmall.png";
 
-export default function DetailCompanies(props) {
+export default function DetailVideos(props) {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState("");
     const [detail, setDetail] = useState(null);
     
     // get path from props
-    console.log("detail companies props :", props);
+    console.log("detail videos props :", props);
     const { location : {pathname} } = props;
     const { match : {params: {id}}} = props;
     const isMovie = pathname.includes("/movie/");
-    console.log("detail companies pathname is :", pathname, isMovie, id);
+    console.log("detail videos pathname is :", pathname, isMovie, id);
 
     const fetchContents = async () => {
         try {
-            const { data: {production_companies: detail} } = await moviesApi.movieDetail(id);
+            const { data: {production_videos: detail} } = await moviesApi.movieDetail(id);
             console.log("fetch data detail :",detail);
             setDetail(detail);
         } catch {
@@ -82,7 +77,7 @@ export default function DetailCompanies(props) {
                 <ItemList>
                   {  detail && detail.length > 0 &&
                     detail.map ( company => (
-                    <Item key={company.id}>
+                    <Item>
                       <Image
                         bgUrl={
                           company.logo_path
