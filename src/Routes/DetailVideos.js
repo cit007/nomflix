@@ -1,19 +1,8 @@
 import React, {useState, useEffect} from "react";
 import { moviesApi, tvApi } from "../API/api";
-import {Link, withRouter} from "react-router-dom"
 import styled from "styled-components";
 import Loader from "../Components/Loader";
-import MoreTab from "../Components/MoreTab";
-
-const Image = styled.div`
-  background-image: url(${props => props.bgUrl});
-  width: 30px;
-  height: 30px;
-  background-size: cover;
-  background-position: center;
-  transition: opacity 0.1s linear;
-  margin-right: 20px;
-`;
+import YouTube from 'react-youtube';
 
 const Container = styled.div`
   height: 100vh;
@@ -27,14 +16,13 @@ const ItemList = styled.ul`
 `;
 
 const Item = styled.li`
-  font-size:25px;
+  font-size:30px;
   font-weight:100;
   margin-bottom: 10px;
-  padding:20px;
+
 
   display:flex;
-  justify-content:flex-start;
-  align-items:center;
+  flex-flow:column;
 `;
 
 
@@ -50,12 +38,27 @@ export default function DetailVideos(props) {
     const { location : {pathname} } = props;
     const { match : {params: {id}}} = props;
     const isMovie = pathname.includes("/movie/");
+
+    // YOUTUBE OPTION
+    const opts = {
+      height: '390',
+      width: '640',
+      playerVars: {
+        // https://developers.google.com/youtube/player_parameters
+        autoplay: 1,
+      },
+    };
+
     console.log("detail videos pathname is :", pathname, isMovie, id);
 
     const fetchContents = async () => {
         try {
-            const { data: {production_videos: detail} } = await moviesApi.movieDetail(id);
-            console.log("fetch data detail :",detail);
+            const { data: 
+              {videos: 
+                {results:detail}
+              } 
+            } = await moviesApi.movieDetail(id);
+            console.log("fetch data detail videos:",detail);
             setDetail(detail);
         } catch {
             setError("fetch data error : nowPlaying");
@@ -76,23 +79,15 @@ export default function DetailVideos(props) {
             <Container>
                 <ItemList>
                   {  detail && detail.length > 0 &&
-                    detail.map ( company => (
-                    <Item>
-                      <Image
-                        bgUrl={
-                          company.logo_path
-                            ? `https://image.tmdb.org/t/p/w300/${company.logo_path}`
-                            : require("../assets/noPosterSmall.png")
-                        }
-                      />
-                      {company.name}
-                    </Item>) )
-                    
+                    detail.map ( video => (
+                      <Item>
+                        {video.name} : {video.site}
+                        <YouTube videoId={video.key} opts={opts} />
+                      </Item>) 
+                    )
                   }
                 </ItemList>
             </Container>
           )
-    );
-        
-        
+    );   
 }
