@@ -47,17 +47,35 @@ const Title = styled.h3`
   font-weight: 700;
 `;
 
-const DetailContainer = styled.div`
+const SummaryContainer = styled.div`
+  width: 80%;
   display: flex;
-  width: 100%;
-  justify-content: space-space-between;
-  font-size: 20px;
+  justify-content: space-around;
+  font-size: 15px;
   font-weight: 300;
   
+  border: 1px solid black;
+  border-radius: 20px;
+  border-width: 1px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  padding: 10px;
   margin: 20px 0px;
 `;
 
-const Item = styled.span``;
+const Item = styled.span`
+  padding: 5px;
+  border-radius: 20px;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* @Can not press link without z-index */
+  z-index:0;
+  &:hover {
+      background-color: gray;
+      color: black;
+  }
+`;
+
+const Button = styled.a`
+`;
 
 const Overview = styled.p`
   font-size: 20px;
@@ -125,7 +143,7 @@ export default function Detail(props) {
                       ? detail.original_title
                       : detail.original_name}
                   </Title>
-                  <DetailContainer>
+                  <SummaryContainer>
                     <Item>
                       {detail.release_date
                         ? detail.release_date.substring(0, 4)
@@ -139,10 +157,13 @@ export default function Detail(props) {
                         detail.genres.map((genre, index) =>
                           index === detail.genres.length - 1
                             ? genre.name
-                            : `${genre.name} / `
+                            : `${genre.name} | `
                         )}
                     </Item>
-                  </DetailContainer>
+                    <Item>
+                        <Button href={detail.imdb_id ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
+                    </Item>
+                  </SummaryContainer>
                   <Overview>{detail.overview}</Overview>
                 </Section>
               </Content>
