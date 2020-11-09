@@ -30,7 +30,7 @@ export default function Home() {
             setPopular(popular);
 
         } catch {
-            setError("fetch data error : nowPlaying");
+            setError("fetch data error : movie data");
         } finally {
             setLoading(false);
         }
