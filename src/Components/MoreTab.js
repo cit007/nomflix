@@ -60,13 +60,10 @@ function MoreTab(props) {
             <SubMenu>
                 <List>
                     <Item>
-                        <Link to={`/movie/${id}`}>Overview</Link>
+                        <Link to={`/movie/${id}/Videos`}>Videos</Link>
                     </Item>
                     <Item>
                         <Link to={`/movie/${id}/Companies`}>Companies</Link>
-                    </Item>
-                    <Item>
-                        <Link to={`/movie/${id}/Videos`}>Videos</Link>
                     </Item>
                 </List>
             </SubMenu>
