@@ -107,9 +107,16 @@ export default function Detail(props) {
 
     const fetchContents = async () => {
         try {
-            const { data: detail } = await moviesApi.movieDetail(id);
-            console.log("fetch data detail :",detail);
-            setDetail(detail);
+            if (isMovie){
+              const { data: detail } = await moviesApi.movieDetail(id);
+              console.log("fetch movie data detail :",detail);
+              setDetail(detail);
+            } else {
+              const { data: detail } = await tvApi.tvDetail(id);
+              console.log("fetch tv data detail :",detail);
+              setDetail(detail);
+            }
+            
         } catch {
             setError("fetch data error : nowPlaying");
         } finally {
@@ -129,7 +136,8 @@ export default function Detail(props) {
             <Container>
               <>
                 <title>
-                  {detail.original_title ? detail.original_title : detail.original_name}{" "}
+                  {isMovie && detail.original_title ? detail.original_title : detail.original_name}{" "}
+                  {!isMovie && detail.original_name ? detail.original_name : detail.original_name}{" "}
                   | Nomflix
                 </title>
               </>
@@ -172,17 +180,16 @@ export default function Detail(props) {
                     </Item>
                   </SummaryContainer>
 
+                  
                   <Overview>{detail.overview}</Overview>
-                  <Hr />
 
                   {/* MORE INFO TAB */}
                   <MoreTab></MoreTab>
+                  
                   
                 </Section>
               </Content>
             </Container>
           )
-    );
-        
-        
+    );   
 }

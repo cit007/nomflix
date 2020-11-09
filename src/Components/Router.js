@@ -15,6 +15,7 @@ export default () => (
             <Route path="/movie/:id" component={Detail} />
             
             <Route path="/tv" exact component={TV} />
+            <Route path="/tv/:id" component={Detail} />
             <Route path="/tv/test" render={() => "test render called"}  />
             <Route path="/search" exact component={Search} />
             <Redirect path="*" to="/" />
