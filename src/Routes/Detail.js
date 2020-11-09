@@ -14,6 +14,7 @@ const BackImg = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  // @SEE props
   background-image: url(${props => props.bgImage});
   background-position: center;
   background-size: cover;
