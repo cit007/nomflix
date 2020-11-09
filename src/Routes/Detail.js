@@ -2,6 +2,7 @@ import React, {useState, useEffect} from "react";
 import { moviesApi, tvApi } from "../API/api";
 import styled from "styled-components";
 import Loader from "../Components/Loader";
+import MoreTab from "../Components/MoreTab";
 
 const Container = styled.div`
   height: 100vh;
@@ -48,9 +49,10 @@ const Title = styled.h3`
 `;
 
 const SummaryContainer = styled.div`
-  width: 80%;
+  width: 90%;
   display: flex;
-  justify-content: space-around;
+  justify-content: flex-start;
+  gap:10px;
   font-size: 15px;
   font-weight: 300;
   
@@ -72,6 +74,11 @@ const Item = styled.span`
       background-color: gray;
       color: black;
   }
+`;
+
+const Hr = styled.hr`
+    width:98%;
+    margin-top: 20px;
 `;
 
 const Button = styled.a`
@@ -164,7 +171,13 @@ export default function Detail(props) {
                         <Button href={detail.imdb_id ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
                     </Item>
                   </SummaryContainer>
+
                   <Overview>{detail.overview}</Overview>
+                  <Hr />
+
+                  {/* MORE INFO TAB */}
+                  <MoreTab></MoreTab>
+                  
                 </Section>
               </Content>
             </Container>

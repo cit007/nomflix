@@ -11,7 +11,8 @@ export default () => (
         <Header />
         <Switch>
             <Route path="/" exact component={Home} />
-            <Route path="/movie/:id" exact component={Detail} />
+            {/* @SEE do not use exact for /movie/:id/companies */}
+            <Route path="/movie/:id" component={Detail} />
             
             <Route path="/tv" exact component={TV} />
             <Route path="/tv/test" render={() => "test render called"}  />
