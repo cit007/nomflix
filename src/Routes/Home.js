@@ -10,7 +10,7 @@ export default function Home() {
     const [nowPlaying, setNowPlaying] = useState([]);
 
 
-    const fetchNowPlaying = async () => {
+    const fetchContents = async () => {
         try {
             const { data: {results} } = await moviesApi.nowPlaying();
             console.log("fetch data nowPlaying :",results);
@@ -22,7 +22,7 @@ export default function Home() {
         }
     };
 
-    useEffect( () => {fetchNowPlaying();}, []);
+    useEffect( () => {fetchContents();}, []);
  
     return (
         loading ? <Loader/> :  nowPlaying && nowPlaying.length > 0 &&
