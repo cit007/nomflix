@@ -20,20 +20,42 @@ const SearchPresenter = ({movieResults,tvResults,searchTerm,updateTerm,searchHan
                 <Input type="text" placeholder = "Search Movies or TV" value={searchTerm} onChange={updateTerm}></Input>
                 <Submit type="submit" value="Search" />
             </Form>
-            {loading ? <Loader /> : movieResults && movieResults.length > 0 && 
-                        <Section title="Movie Results">
-                            {movieResults.map(movie => (
-                            <Poster
-                                key={movie.id}
-                                id={movie.id}
-                                imageUrl={movie.poster_path}
-                                title={movie.original_title}
-                                rating={movie.vote_average}
-                                year={movie.release_date.substring(0, 4)}
-                                isMovie={true}
-                            />
-                            ))}
-                        </Section>
+            {
+                loading ? 
+                <Loader /> 
+                : 
+                movieResults && movieResults.length > 0 && 
+                <Section title="Movie Results">
+                    {movieResults.map(movie => (
+                    <Poster
+                        key={movie.id}
+                        id={movie.id}
+                        imageUrl={movie.poster_path}
+                        title={movie.original_title}
+                        rating={movie.vote_average}
+                        year={movie.release_date.substring(0, 4)}
+                        isMovie={true}
+                    />
+                    ))}
+                </Section>
+            }
+            {
+                loading ? 
+                <Loader /> 
+                : 
+                tvResults && tvResults.length > 0 && 
+                <Section title="TV Show Results">
+                    {tvResults.map(tv => (
+                    <Poster
+                        key={tv.id}
+                        id={tv.id}
+                        imageUrl={tv.poster_path}
+                        title={tv.original_title}
+                        rating={tv.vote_average}
+                        year={tv.first_air_date.substring(0, 4)}
+                    />
+                    ))}
+                </Section>
             }
         </Container>
     );
