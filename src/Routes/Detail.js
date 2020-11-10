@@ -27,6 +27,7 @@ const Content = styled.div`
   display: flex;
   width: 100%;
   height: 100%;
+  margin-top: 30px;
 `;
 
 const Cover = styled.div`
@@ -35,7 +36,13 @@ const Cover = styled.div`
   background-image: url(${props => props.bgImage});
   background-position: center;
   background-size: cover;
-  border-radius: 5px;
+  opacity:0.5;
+  box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
+  &:hover{
+    transform: scale(0.98);
+    box-shadow: 1px 10px 10px blue;
+    opacity:0.8;
+  }
 `;
 
 const Section = styled.section`
@@ -180,7 +187,6 @@ export default function Detail(props) {
                     </Item>
                   </SummaryContainer>
 
-                  
                   <Overview>{detail.overview}</Overview>
 
                   {/* MORE INFO TAB */}

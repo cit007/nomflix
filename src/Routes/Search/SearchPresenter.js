@@ -7,17 +7,35 @@ import Poster from "../../Components/Poster";
 import { moviesApi } from "../../API/api";
 
 
-const Container = styled.div``;
-const Form = styled.form``;
-const Input = styled.input`
+const Container = styled.div`
+    margin-top:50px;
+    margin-left:30px;
 `;
-const Submit = styled.input``;
+const Form = styled.form`
+    font-size:40px;
+`;
+const Input = styled.input`
+    font-size:40px;
+    font-weight:100;
+    /* padding: 10px; */
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
+`;
+const Submit = styled.input`
+    font-size:40px;
+    font-weight:100;
+    /* padding:10px; */
+    border:1px solid black;
+    border-radius:10px;
+    box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
+`;
 
 const SearchPresenter = ({movieResults,tvResults,searchTerm,updateTerm,searchHandle,loading,error}) => {
     return (
         <Container>
             <Form onSubmit={searchHandle}>
-                <Input type="text" placeholder = "Search Movies or TV" value={searchTerm} onChange={updateTerm}></Input>
+                <Input type="text" placeholder = "e.g. terminator" value={searchTerm} onChange={updateTerm}></Input>
                 <Submit type="submit" value="Search" />
             </Form>
             {

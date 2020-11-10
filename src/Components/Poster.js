@@ -4,25 +4,36 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 const Container = styled.div`
+  position:relative;
   font-size: 12px;
 `;
 
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
-  height: 180px;
+  height: 230px;
   background-size: cover;
   border-radius: 4px;
   background-position: center;
-  transition: opacity 0.1s linear;
-  z-index:11;
+  transition: opacity 1s linear;
+  opacity: 0.8;
 `;
 
-const Rating = styled.span`
-  bottom: 5px;
-  right: 5px;
-  position: absolute;
-  opacity: 0;
-  transition: opacity 0.1s linear;
+const ImageDescription = styled.div`
+  position:absolute;
+  top:0;
+  left:0;
+  background: rgba(255,255,255,0.7);
+  border-radius: 4px;
+  color: black;
+  width:150px;
+  height: 230px;
+  visibility: hidden;
+
+  display:flex;
+  flex-flow:column;
+  justify-content:space-around;
+  align-items:center;
+  transition: opacity 1s linear;
 `;
 
 const ImageContainer = styled.div`
@@ -30,10 +41,13 @@ const ImageContainer = styled.div`
   position: relative;
   &:hover {
     ${Image} {
-      opacity: 0.3;
+      opacity: 0.5;
+      transform: scale(1.1);
     }
-    ${Rating} {
+    ${ImageDescription} {
       opacity: 1;
+      visibility:visible;
+      transform: scale(1.1);
     }
   }
 `;
@@ -41,11 +55,17 @@ const ImageContainer = styled.div`
 const Title = styled.span`
   display: block;
   margin-bottom: 3px;
+  padding: 20px;
+  font-size:15px;
+  font-weight:500;
+  text-align:center;
 `;
 
 const Year = styled.span`
-  font-size: 10px;
-  color: rgba(255, 255, 255, 0.5);
+  font-size: 13px;
+`;
+
+const Rating = styled.span`
 `;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
@@ -62,17 +82,21 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
           }
         />
 
-        <Rating>
-          <span role="img" aria-label="rating">
-            ⭐️
-          </span>{" "}
-          {rating}/10
-        </Rating>
+        <ImageDescription className="imgDesc">
+          <Title>
+            {/* {title && title.length > 18 ? `${title.substring(0, 18)}...` : title} */}
+            {title}
+          </Title>
+          <Rating>
+            <span role="img" aria-label="rating">
+              ⭐️
+            </span>{" "}
+            {rating}/10
+          </Rating>
+          <Year>{year}</Year>
+        </ImageDescription>
+        
       </ImageContainer>
-      <Title>
-        {title && title.length > 18 ? `${title.substring(0, 18)}...` : title}
-      </Title>
-      <Year>{year}</Year>
     </Container>
   </Link>
 )};
