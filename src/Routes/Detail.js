@@ -84,11 +84,9 @@ const Hr = styled.hr`
 `;
 
 const Button = styled.a`
-  color:blue;
   padding: 5px;
   border-radius: 20px;
-  border: 1px solid blue;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px white;
   /* @Can not press link without z-index */
   z-index:0;
   
@@ -113,18 +111,15 @@ const P = styled.p `
 `;
 
 const Link = styled.a `
-  color:blue;
   width:110px;
   padding: 5px;
   border-radius: 20px;
-  border: 1px solid blue;
-  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  box-shadow: 1px 2px 2px yellow;
   /* @Can not press link without z-index */
   z-index:0;
   
   &:hover {
-      transform:scale(0.98);
-      color: black;
+      transform:scale(1.1);
   }
 `
 

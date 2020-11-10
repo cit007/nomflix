@@ -22,6 +22,14 @@ const Item = styled.li`
   font-weight:100;
 `;
 
+const Video = styled.div`
+  display:flex;
+  flex-flow:column;
+`;
+
+const Div = styled.div`
+  padding:10px;
+`;
 
 const NotFoundImage = "../assets/noPosterSmall.png";
 
@@ -86,17 +94,20 @@ export default function DetailVideos(props) {
           ) : (
             <Container>
                 <ItemList>
+                  <Video>
                   {  (detail && detail.length > 0) ?
                     detail.map ( video => (
                       <Item>
-                        ■ {video.site} : {video.name}
+                        <Div>
+                          ■ {video.site} : {video.name}
+                        </Div>
                         <YouTube videoId={video.key} opts={opts} />
                       </Item>) 
                     )
                     :
-                    
                     <Item>"No Result Found..."</Item>
                   }
+                  </Video>
                 </ItemList>
             </Container>
           )

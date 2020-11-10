@@ -13,6 +13,7 @@ const Image = styled.div`
   background-position: center;
   transition: opacity 0.1s linear;
   margin-right: 20px;
+  z-index: 0;
 
   &:hover {
     filter: brightness(0.8);
@@ -37,7 +38,6 @@ const Item = styled.li`
   font-weight:100;
   margin-bottom: 10px;
   padding:10px;
-
   display:flex;
   justify-content:flex-start;
   align-items:center;
