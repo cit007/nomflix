@@ -14,6 +14,7 @@ export const moviesApi = {
     popular: () => api.get("movie/popular"),
     // @SEE `movie/${id}`
     movieDetail: (id) => api.get(`movie/${id}`, {params: {append_to_response: "videos"}}),
+    movieCrews: (id) => api.get(`movie/${id}/credits`),
     search: (term) => api.get("search/movie", {params: {"query": encodeURIComponent(term)}}),
 }
 
@@ -22,5 +23,6 @@ export const tvApi = {
     popular: () => api.get("tv/popular"),
     airingToday: () => api.get("tv/airing_today"),
     tvDetail: (id) => api.get(`tv/${id}`, {params: {append_to_response: "videos"}}),
+    tvCrews: (id) => api.get(`tv/${id}/credits`),
     search: (term) => api.get("search/tv", {params: {"query": encodeURIComponent(term)}})
 }

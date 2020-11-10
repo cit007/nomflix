@@ -17,7 +17,7 @@ const Title = styled.span`
   background-color: black;
   border:3px solid black;
   border-radius:10px;
-  opacity: 0.6;
+  opacity: ${props => props.kind == "Crews" ? "0": "0.6"};
   box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
 
   &:hover{
@@ -35,7 +35,7 @@ const Grid = styled.div`
 
 const Section = ({ title, children }) => (
   <Container>
-    <Title>{title}</Title>
+    <Title kind={title}>{title}</Title>
     <Grid>{children}</Grid>
   </Container>
 );

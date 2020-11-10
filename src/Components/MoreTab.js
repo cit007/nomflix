@@ -4,6 +4,7 @@ import styled from "styled-components"
 import DetailCompanies from "../Routes/DetailCompanies"
 import DetailVideos from "../Routes/DetailVideos"
 import DetailSeasons from "../Routes/DetailSeasons"
+import DetailCrews from "../Routes/DetailCrews"
 
 const Main = styled.main`
     margin-top: 50px;
@@ -88,14 +89,24 @@ function MoreTab(props) {
                         <Item><Link to={`/tv/${id}/Seasons`}>Seasons</Link></Item>
                     }
                     
+                    <Item>
+                        {   isMovie?
+                            <Link to={`/movie/${id}/Crews`}>Crew</Link>
+                            :
+                            <Link to={`/tv/${id}/Crews`}>Crew</Link>
+                        }
+                    </Item>
+                    
                 </List>
             </SubMenu>
             
             <Route path="/movie/:id/Companies" component={DetailCompanies} />
             <Route path="/movie/:id/Videos" component={DetailVideos} />
+            <Route path="/movie/:id/Crews" component={DetailCrews} />
             <Route path="/tv/:id/Companies" component={DetailCompanies} />
             <Route path="/tv/:id/Videos" component={DetailVideos} />
             <Route path="/tv/:id/Seasons" component={DetailSeasons} />
+            <Route path="/tv/:id/Crews" component={DetailCrews} />
         </Main>
     );
 }
