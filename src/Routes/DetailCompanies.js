@@ -87,7 +87,7 @@ export default function DetailCompanies(props) {
                         bgUrl={
                           company.logo_path
                             ? `https://image.tmdb.org/t/p/w300/${company.logo_path}`
-                            : require("../assets/noPosterSmall.png")
+                            : "https://img.icons8.com/windows/2x/no-image.png"
                         }
                       />
                       {company.name}

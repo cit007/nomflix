@@ -5,6 +5,7 @@ import DetailCompanies from "../Routes/DetailCompanies"
 import DetailVideos from "../Routes/DetailVideos"
 
 const Main = styled.main`
+    margin-top: 50px;
 `;
 
 const SubMenu = styled.div`
@@ -30,8 +31,14 @@ const List = styled.ul`
 
 const Item = styled.li`
     width:80px;
-    height:50px;
+    height:40px;
     padding:5px;
+    color:black;
+
+    padding: 5px;
+    border-radius: 20px;
+    background-color: rgba(233,233,233,0.8);
+
     display:flex;
     justify-content:center;
     align-items:center;
@@ -41,10 +48,10 @@ const Item = styled.li`
 
     &:hover {
         filter: brightness(0.8);
-        background-color: #2ecc71;
-        transform: scale(0.9);
+        background-color: black;
+        transform: scale(1.1);
         color:white;
-        font-weight:400;
+        opacity:0.5;
     }
 `;
 

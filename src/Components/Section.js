@@ -14,10 +14,15 @@ const Title = styled.span`
   padding: 10px;
   font-size: 25px;
   font-weight: 200;
-
+  background-color: black;
   border:3px solid black;
-  border-radius:4px;
+  border-radius:10px;
+  opacity: 0.6;
   box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
+
+  &:hover{
+    color:red;
+  }
 `;
 
 const Grid = styled.div`

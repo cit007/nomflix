@@ -32,7 +32,7 @@ const Content = styled.div`
 
 const Cover = styled.div`
   width: 30%;
-  height: 100%;
+  height: 92%;
   background-image: url(${props => props.bgImage});
   background-position: center;
   background-size: cover;
@@ -62,12 +62,13 @@ const SummaryContainer = styled.div`
   gap:10px;
   font-size: 15px;
   font-weight: 300;
-  
+  padding: 10px;
+
   border: 1px solid black;
   border-radius: 20px;
   border-width: 1px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  padding: 10px;
+  
   margin: 20px 0px;
 `;
 
@@ -75,12 +76,6 @@ const Item = styled.span`
   padding: 5px;
   border-radius: 20px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-  /* @Can not press link without z-index */
-  z-index:0;
-  &:hover {
-      background-color: gray;
-      color: black;
-  }
 `;
 
 const Hr = styled.hr`
@@ -89,14 +84,49 @@ const Hr = styled.hr`
 `;
 
 const Button = styled.a`
+  color:blue;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid blue;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* @Can not press link without z-index */
+  z-index:0;
+  
+  &:hover {
+      transform:scale(1.1);
+  }
 `;
 
-const Overview = styled.p`
+const Overview = styled.div`
   font-size: 20px;
   font-weight: 100;
   line-height: 1.5;
-  width: 70%;
+  width: 80%;
+
+  display:flex;
+  flex-flow: column;
+  justify-content: space-evenly;
 `;
+
+const P = styled.p `
+  margin-bottom:20px;
+`;
+
+const Link = styled.a `
+  color:blue;
+  width:110px;
+  padding: 5px;
+  border-radius: 20px;
+  border: 1px solid blue;
+  box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
+  /* @Can not press link without z-index */
+  z-index:0;
+  
+  &:hover {
+      transform:scale(0.98);
+      color: black;
+  }
+`
 
 const NotFoundImage = "../assets/noPosterSmall.png";
 
@@ -182,12 +212,14 @@ export default function Detail(props) {
                             : `${genre.name} | `
                         )}
                     </Item>
-                    <Item>
-                        <Button href={(detail.imdb_id || detail.imdb_id!==undefined) ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
-                    </Item>
+                    <Button href={(detail.imdb_id || detail.imdb_id!==undefined) ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
                   </SummaryContainer>
 
-                  <Overview>{detail.overview}</Overview>
+                  <Overview>
+                    <P>■ OverView</P>
+                    <P>{detail.overview}</P>
+                    <Link href={(detail.homepage || detail.homepage!==undefined) ? detail.homepage:"#"} target="_blank">HomePage</Link>
+                  </Overview>
 
                   {/* MORE INFO TAB */}
                   <MoreTab></MoreTab>
