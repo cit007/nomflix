@@ -12,16 +12,14 @@ const Container = styled.div`
 `;
 
 const ItemList = styled.ul`
-
+  display:flex;
+  flex-flow:column;
 `;
 
 const Item = styled.li`
-  font-size:30px;
-  font-weight:100;
   margin-bottom: 10px;
-
-  display:flex;
-  flex-flow:column;
+  font-size:25px;
+  font-weight:100;
 `;
 
 
@@ -91,12 +89,13 @@ export default function DetailVideos(props) {
                   {  (detail && detail.length > 0) ?
                     detail.map ( video => (
                       <Item>
-                        {video.name} : {video.site}
+                        ■ {video.site} : {video.name}
                         <YouTube videoId={video.key} opts={opts} />
                       </Item>) 
                     )
                     :
-                    "No Result Found..."
+                    
+                    <Item>"No Result Found..."</Item>
                   }
                 </ItemList>
             </Container>

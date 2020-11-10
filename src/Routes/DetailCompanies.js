@@ -34,8 +34,9 @@ const ItemList = styled.ul`
 const Item = styled.li`
   font-size:25px;
   font-weight:100;
+  font-weight:100;
   margin-bottom: 10px;
-  padding:20px;
+  padding:10px;
 
   display:flex;
   justify-content:flex-start;
@@ -93,7 +94,7 @@ export default function DetailCompanies(props) {
                       {company.name}
                     </Item>) )
                     :
-                    "No Result Found..."
+                    <Item>"No Result Found..."</Item>
                   }
                 </ItemList>
             </Container>
