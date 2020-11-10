@@ -46,7 +46,7 @@ const Cover = styled.div`
 `;
 
 const Section = styled.section`
-  width: 70%;
+  width: 60%;
   padding: 20px;
 `;
 
@@ -56,7 +56,7 @@ const Title = styled.h3`
 `;
 
 const SummaryContainer = styled.div`
-  width: 90%;
+  width: 100%;
   display: flex;
   justify-content: flex-start;
   gap:10px;

@@ -12,7 +12,7 @@ const Main = styled.main`
 
 const SubMenu = styled.div`
     color:white;
-    width:90%;
+    width:100%;
     height:50px;
     display:flex;
     align-items:center;
