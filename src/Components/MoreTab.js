@@ -3,6 +3,7 @@ import {Route, Link, withRouter} from "react-router-dom"
 import styled from "styled-components"
 import DetailCompanies from "../Routes/DetailCompanies"
 import DetailVideos from "../Routes/DetailVideos"
+import DetailSeasons from "../Routes/DetailSeasons"
 
 const Main = styled.main`
     margin-top: 50px;
@@ -80,6 +81,13 @@ function MoreTab(props) {
                             <Link to={`/tv/${id}/Companies`}>Companies</Link>
                         }
                     </Item>
+                    
+                    {   isMovie?
+                        <></>
+                        :
+                        <Item><Link to={`/tv/${id}/Seasons`}>Seasons</Link></Item>
+                    }
+                    
                 </List>
             </SubMenu>
             
@@ -87,6 +95,7 @@ function MoreTab(props) {
             <Route path="/movie/:id/Videos" component={DetailVideos} />
             <Route path="/tv/:id/Companies" component={DetailCompanies} />
             <Route path="/tv/:id/Videos" component={DetailVideos} />
+            <Route path="/tv/:id/Seasons" component={DetailSeasons} />
         </Main>
     );
 }
