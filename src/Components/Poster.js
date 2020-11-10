@@ -12,8 +12,9 @@ const Image = styled.div`
   height: 180px;
   background-size: cover;
   border-radius: 4px;
-  background-position: center center;
+  background-position: center;
   transition: opacity 0.1s linear;
+  z-index:11;
 `;
 
 const Rating = styled.span`
@@ -48,7 +49,7 @@ const Year = styled.span`
 `;
 
 const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
-  console.log("poster :", imageUrl, title);
+  console.log("poster info :", imageUrl, title, rating, year, isMovie);
   return(
   <Link to={isMovie ? `/movie/${id}` : `/tv/${id}`}>
     <Container>
@@ -57,7 +58,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
           bgUrl={
             imageUrl
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : require("../assets/noPosterSmall.png")
+              : "https://img.icons8.com/windows/2x/no-image.png"
           }
         />
 

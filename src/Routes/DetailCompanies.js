@@ -80,7 +80,7 @@ export default function DetailCompanies(props) {
           ) : (
             <Container>
                 <ItemList>
-                  {  detail && detail.length > 0 &&
+                  {  (detail && detail.length) > 0 ?
                     detail.map ( company => (
                     <Item key={company.id}>
                       <Image
@@ -92,7 +92,8 @@ export default function DetailCompanies(props) {
                       />
                       {company.name}
                     </Item>) )
-                    
+                    :
+                    "No Result Found..."
                   }
                 </ItemList>
             </Container>

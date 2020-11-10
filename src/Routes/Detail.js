@@ -165,7 +165,7 @@ export default function Detail(props) {
                         : detail.first_air_date.substring(0, 4)}
                     </Item>
                     <Item>
-                      {detail.runtime ? detail.runtime : detail.episode_run_time[0]} min
+                      { (detail.runtime || detail.runtime!==undefined) ? detail.runtime : detail.episode_run_time[0]} min
                     </Item>
                     <Item>
                       {detail.genres &&
@@ -176,7 +176,7 @@ export default function Detail(props) {
                         )}
                     </Item>
                     <Item>
-                        <Button href={detail.imdb_id ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
+                        <Button href={(detail.imdb_id || detail.imdb_id!==undefined) ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
                     </Item>
                   </SummaryContainer>
 

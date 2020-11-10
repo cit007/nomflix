@@ -88,13 +88,15 @@ export default function DetailVideos(props) {
           ) : (
             <Container>
                 <ItemList>
-                  {  detail && detail.length > 0 &&
+                  {  (detail && detail.length > 0) ?
                     detail.map ( video => (
                       <Item>
                         {video.name} : {video.site}
                         <YouTube videoId={video.key} opts={opts} />
                       </Item>) 
                     )
+                    :
+                    "No Result Found..."
                   }
                 </ItemList>
             </Container>
