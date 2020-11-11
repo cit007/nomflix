@@ -1,10 +1,29 @@
 # Nomflix
 
-Learning React and ES6 by building a Movie Discovery App.
+# Titles
+ * Learning React/ReactHooks and ES6 by building a Movie Discovery App.
+ 
+# Introduction - the project's aim
+ * Clone Coding : https://popcorntime-online.ch/
+ * Data Source API : https://www.themoviedb.org/
+ * This webpage fetch json data async and show data using Reactjs.
+ * more info:component/hooks/route/sytyled-component/axios/etc.
+ 
+# Technologies
+ * function component / class component => react hooks
+ * route and nested route
+ * styled-component with custom tag/attribute
+ * beautiful data fetch using axios
+ 
+# Installed Package
+ * Axios
+ * styled-components
+ * react-router-dom
+ * etc(Youtube/Loading)
 
 ## Screens
 
-- Home
+- Home(Movie)
 - TV Shows
 - Search
 - Detail
