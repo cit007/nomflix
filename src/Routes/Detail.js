@@ -200,7 +200,7 @@ export default function Detail(props) {
                       { (detail.runtime || detail.runtime!==undefined) ? detail.runtime : detail.episode_run_time[0]} min
                     </Item>
                     <Item>
-                      {detail.genres && detail.genres > 0 ?
+                      {detail.genres && detail.genres.length > 0 ?
                         detail.genres.map((genre, index) =>
                           index === detail.genres.length - 1
                             ? genre.name
