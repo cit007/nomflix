@@ -181,7 +181,7 @@ export default function Detail(props) {
                   bgImage={
                     detail.poster_path
                       ? `https://image.tmdb.org/t/p/original${detail.poster_path}`
-                      : require("../assets/noPosterSmall.png")
+                      : "https://image.flaticon.com/icons/png/128/3004/3004588.png"
                   }
                 />
                 <Section>
@@ -192,20 +192,20 @@ export default function Detail(props) {
                   </Title>
                   <SummaryContainer>
                     <Item>
-                      {detail.release_date
-                        ? detail.release_date.substring(0, 4)
-                        : detail.first_air_date.substring(0, 4)}
+                      { isMovie && detail.release_date ? detail.release_date.substring(0, 4)
+                        : (detail.first_air_date ? detail.first_air_date.substring(0, 4) : "None")
+                      }
                     </Item>
                     <Item>
                       { (detail.runtime || detail.runtime!==undefined) ? detail.runtime : detail.episode_run_time[0]} min
                     </Item>
                     <Item>
-                      {detail.genres &&
+                      {detail.genres && detail.genres > 0 ?
                         detail.genres.map((genre, index) =>
                           index === detail.genres.length - 1
                             ? genre.name
                             : `${genre.name} | `
-                        )}
+                        ) : "None"}
                     </Item>
                     <Button href={(detail.imdb_id || detail.imdb_id!==undefined) ? `https://www.imdb.com/title/${detail.imdb_id}`:"#"} target="_blank">imdb</Button>
                   </SummaryContainer>
