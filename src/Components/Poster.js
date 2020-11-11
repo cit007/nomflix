@@ -78,7 +78,7 @@ const Poster = ({ id, imageUrl, title, rating, year, isMovie = false }) => {
           bgUrl={
             imageUrl
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : "https://img.icons8.com/windows/2x/no-image.png"
+              : "https://image.flaticon.com/icons/png/128/3004/3004588.png"
           }
         />
 

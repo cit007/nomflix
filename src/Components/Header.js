@@ -24,7 +24,7 @@ const List = styled.ul`
 
 const Item = styled.li`
     width:80px;
-    height:50px;
+    height:30px;
     display:flex;
     justify-content:center;
     align-items:center;
@@ -42,7 +42,6 @@ const Item = styled.li`
 
     &:hover {
         transform: scale(1.1);
-        color:black;
         opacity:1;
     }
 `;

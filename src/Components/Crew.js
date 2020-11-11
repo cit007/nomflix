@@ -78,7 +78,7 @@ const Crew = ({ id, imageUrl, name, character, isMovie = false }) => {
           bgUrl={
             imageUrl
               ? `https://image.tmdb.org/t/p/w300${imageUrl}`
-              : "https://img.icons8.com/windows/2x/no-image.png"
+              : "https://image.flaticon.com/icons/png/128/126/126486.png"
           }
         />
 
