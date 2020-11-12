@@ -8,11 +8,12 @@ import { moviesApi } from "../../API/api";
 
 
 const Container = styled.div`
-    width: 80%;
+    width: 100%;
     margin-top:50px;
     margin-left:30px;
 `;
 const Form = styled.form`
+    width:80%;
     font-size:30px;
 `;
 const Input = styled.input`
@@ -54,7 +55,7 @@ const SearchPresenter = ({movieResults,tvResults,searchTerm,updateTerm,searchHan
     return (
         <Container>
             <Form onSubmit={searchHandle}>
-                <Input bgUrl="https://image.flaticon.com/icons/png/128/44/44623.png" type="text" placeholder = "" value={searchTerm} onChange={updateTerm}></Input>
+                <Input bgUrl="https://image.flaticon.com/icons/png/128/44/44623.png" type="text" placeholder = "Search..." value={searchTerm} onChange={updateTerm}></Input>
                 {/* <Submit type="submit" value="Search" /> */}
             </Form>
             {
