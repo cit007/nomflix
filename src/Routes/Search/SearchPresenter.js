@@ -10,11 +10,11 @@ import { moviesApi } from "../../API/api";
 const Container = styled.div`
     width: 100%;
     margin-top:50px;
-    margin-left:30px;
 `;
 const Form = styled.form`
     width:80%;
     font-size:30px;
+    margin-left:30px;
 `;
 const Input = styled.input`
   width:200px;
