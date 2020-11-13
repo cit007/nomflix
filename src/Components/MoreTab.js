@@ -33,7 +33,7 @@ const List = styled.ul`
 
     @media screen and (max-width: 762px) {
         flex-direction : column;
-        gap:15px;
+        gap:20px;
     }
 `;
 
