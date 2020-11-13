@@ -9,7 +9,6 @@ import Section from "../Components/Section";
 const Container = styled.div`
   height: 100%;
   width: 100vw;
-  background:blue;
 `;
 
 const NotFoundImage = "../assets/noPosterSmall.png";
