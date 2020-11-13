@@ -8,7 +8,11 @@ import Section from "../Components/Section";
 
 const Container = styled.div`
   height: 100%;
-  width: 100vw;
+  width: 100%;
+
+  @media screen and (max-width: 762px) {
+    width: 100vw;
+  }
 `;
 
 const NotFoundImage = "../assets/noPosterSmall.png";
