@@ -20,7 +20,7 @@ const SubMenu = styled.div`
 
     background-color: rgba(20,20,20,0.8);
     box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
-    z-index:1;
+    z-index:0;
 `;
 
 const List = styled.ul`
@@ -29,11 +29,11 @@ const List = styled.ul`
     gap:10px;
     padding: 10px;
     width: 100%;
+    z-index:0;
     /* margin-left:20px; */
 
     @media screen and (max-width: 762px) {
         flex-direction : column;
-        gap:20px;
     }
 `;
 
@@ -51,6 +51,10 @@ const Item = styled.li`
     &:hover {
         background:#f0f0f0;
         opacity:0.7;
+    }
+
+    @media screen and (max-width: 762px) {
+        border: 2px solid gray;
     }
 `;
 
