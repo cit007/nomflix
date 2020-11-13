@@ -31,6 +31,7 @@ const Item = styled.li`
 const Video = styled.div`
   display:flex;
   flex-flow:column;
+  z-index:0;
 `;
 
 const Div = styled.div`
