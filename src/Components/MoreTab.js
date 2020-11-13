@@ -64,34 +64,31 @@ function MoreTab(props) {
         <Main>
             <SubMenu>
                 <List>
-                    <Item>
-                        {   isMovie?
-                            <Link to={`/movie/${id}/Videos`}>Videos</Link>
-                            :
-                            <Link to={`/tv/${id}/Videos`}>Videos</Link>
-                        }
-                    </Item>
-                    <Item>
-                        {   isMovie?
-                            <Link to={`/movie/${id}/Companies`}>Companies</Link>
-                            :
-                            <Link to={`/tv/${id}/Companies`}>Companies</Link>
-                        }
-                    </Item>
+                    
+                    {   isMovie?
+                        <Link to={`/movie/${id}/Videos`}><Item>Videos</Item></Link>
+                        :
+                        <Link to={`/tv/${id}/Videos`}><Item>Videos</Item></Link>
+                    }
+                
+                    {   isMovie?
+                        <Link to={`/movie/${id}/Companies`}><Item>Companies</Item></Link>
+                        :
+                        <Link to={`/tv/${id}/Companies`}><Item>Companies</Item></Link>
+                    }
                     
                     {   isMovie?
                         <></>
                         :
-                        <Item><Link to={`/tv/${id}/Seasons`}>Seasons</Link></Item>
+                        <Link to={`/tv/${id}/Seasons`}><Item>Seasons</Item></Link>
                     }
                     
-                    <Item>
-                        {   isMovie?
-                            <Link to={`/movie/${id}/Crews`}>Crew</Link>
-                            :
-                            <Link to={`/tv/${id}/Crews`}>Crew</Link>
-                        }
-                    </Item>
+                    
+                    {   isMovie?
+                        <Link to={`/movie/${id}/Crews`}><Item>Crew</Item></Link>
+                        :
+                        <Link to={`/tv/${id}/Crews`}><Item>Crew</Item></Link>
+                    }
                     
                 </List>
             </SubMenu>

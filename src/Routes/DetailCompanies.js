@@ -26,10 +26,13 @@ const Container = styled.div`
   width: 100%;
   margin-top: 30px;
   padding: 20px;
+  
+  @media screen and (max-width: 762px) {
+    width: 100vw;
+  }
 `;
 
 const ItemList = styled.ul`
-
 `;
 
 const Item = styled.li`
