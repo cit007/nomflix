@@ -13,7 +13,6 @@ const Main = styled.main`
 const SubMenu = styled.div`
     color:white;
     width:100%;
-    height:50px;
     display:flex;
     align-items:center;
     border-radius: 20px;
@@ -28,32 +27,29 @@ const List = styled.ul`
     display:flex;
     justify-content:flex-start;
     gap:10px;
-    margin-left:20px
+    padding: 10px;
+    width: 100%;
+    /* margin-left:20px; */
+
+    @media screen and (max-width: 762px) {
+        flex-direction : column;
+    }
 `;
 
 const Item = styled.li`
-    width:80px;
-    height:40px;
-    padding:5px;
+    /* width:100%; */
+    background-color: #f1f1f1;
     color:black;
-
     padding: 5px;
     border-radius: 20px;
-    background-color: rgba(233,233,233,0.8);
-
-    display:flex;
-    justify-content:center;
-    align-items:center;
+    box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
 
     /* @Can not press link without z-index */
     z-index:0;
 
     &:hover {
-        filter: brightness(0.8);
-        background-color: black;
-        transform: scale(1.1);
-        color:white;
-        opacity:0.5;
+        background:#f0f0f0;
+        opacity:0.7;
     }
 `;
 

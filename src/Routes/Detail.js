@@ -63,13 +63,16 @@ const SummaryContainer = styled.div`
   font-size: 15px;
   font-weight: 300;
   padding: 10px;
-
   border: 1px solid black;
   border-radius: 20px;
   border-width: 1px;
   box-shadow: 2px 2px 2px 1px rgba(0, 0, 0, 0.2);
   
   margin: 20px 0px;
+
+  @media screen and (max-width: 762px) {
+    flex-direction : column;
+  }
 `;
 
 const Item = styled.span`
@@ -91,7 +94,8 @@ const Button = styled.a`
   z-index:0;
   
   &:hover {
-      transform:scale(1.1);
+      background:#0f0f0f;
+      opacity:0.5
   }
 `;
 
