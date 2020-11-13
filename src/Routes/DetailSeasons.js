@@ -7,13 +7,11 @@ import MoreTab from "../Components/MoreTab";
 
 const Image = styled.div`
   background-image: url(${props => props.bgUrl});
-
-  width: 100%;
-  height: 1000px; 
+  max-width:100%;
+  height:1000px;
   background-size: cover;
   background-position: center;
   transition: opacity 0.1s linear;
-  margin-right: 20px;
   opacity:0.5;
   box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
   &:hover{
@@ -21,13 +19,22 @@ const Image = styled.div`
     box-shadow: 1px 10px 10px rgba(230,230,230,0.7);
     opacity:1;
   }
+
+  @media screen and (max-width: 762px) {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit:cover;
+  }
 `;
 
 const Container = styled.div`
   height: 100vh;
   width: 80%;
   margin-top: 30px;
-  padding: 20px;
+
+  @media screen and (max-width: 762px) {
+    width: 100vw;
+  }
 `;
 
 const ItemList = styled.ul`
@@ -39,7 +46,6 @@ const Item = styled.li`
   font-weight:100;
   font-weight:100;
   margin-bottom: 10px;
-  padding:10px;
 `;
 
 const Season = styled.div`
