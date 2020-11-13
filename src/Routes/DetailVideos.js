@@ -9,6 +9,12 @@ const Container = styled.div`
   width: 100%;
   margin-top: 30px;
   padding: 20px;
+
+  @media screen and (max-width: 762px) {
+    width:100vw;
+    position: absolute;
+    left:0;
+  }
 `;
 
 const ItemList = styled.ul`
@@ -45,14 +51,12 @@ export default function DetailVideos(props) {
     const isMovie = pathname.includes("/movie/");
 
     // YOUTUBE OPTION
-    const opts = {
-      height: '390',
-      width: '640',
-      playerVars: {
-        // https://developers.google.com/youtube/player_parameters
-        autoplay: 1,
-      },
-    };
+    // const opts = {
+    //   playerVars: {
+    //     // https://developers.google.com/youtube/player_parameters
+    //     autoplay: 1,
+    //   },
+    // };
 
     console.log("detail videos pathname is :", pathname, isMovie, id);
 
@@ -101,7 +105,8 @@ export default function DetailVideos(props) {
                         <Div>
                           ■ {video.site} : {video.name}
                         </Div>
-                        <YouTube videoId={video.key} opts={opts} />
+                        <iframe allowfullscreen="" frameborder="0" height="315" src={`https://www.youtube.com/embed/${video.key}`} width="560"></iframe>
+                        {/* <YouTube videoId={video.key} opts={opts} /> */}
                       </Item>) 
                     )
                     :

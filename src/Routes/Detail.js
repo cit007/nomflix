@@ -21,6 +21,10 @@ const BackImg = styled.div`
   background-size: cover;
   filter: blur(3px);
   opacity: 0.2;
+
+  @media screen and (max-width: 762px) {
+    display:none;
+  }
 `;
 
 const Content = styled.div`
@@ -42,6 +46,18 @@ const Cover = styled.div`
     transform: scale(0.98);
     box-shadow: 1px 10px 10px blue;
     opacity:0.8;
+  }
+
+  @media screen and (max-width: 762px) {
+    position:absolute;
+    width:100%;
+    left:0;
+    opacity:0.2;
+    &:hover{
+      transform: scale(0.98);
+      box-shadow: 1px 10px 10px blue;
+      opacity:0.4;
+    }
   }
 `;
 
@@ -95,7 +111,7 @@ const Button = styled.a`
   
   &:hover {
       background:#0f0f0f;
-      opacity:0.5
+      opacity:0.5;
   }
 `;
 
@@ -108,6 +124,10 @@ const Overview = styled.div`
   display:flex;
   flex-flow: column;
   justify-content: space-evenly;
+
+  @media screen and (max-width: 762px) {
+    width: 90vw;
+  }
 `;
 
 const P = styled.p `
